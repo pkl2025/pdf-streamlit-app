@@ -1,17 +1,28 @@
 import streamlit as st
-import base64
-import os
 
-st.title("📄 PDF Viewer Online")
+st.set_page_config(page_title="PDF Viewer", layout="wide")
+st.title("📄 PDF Viewer - Open in New Tab")
 
-pdf_dir = "pdfs"
-pdf_files = [f for f in os.listdir(pdf_dir) if f.endswith(".pdf")]
+# Ganti ini dengan username dan nama repo kamu
+GITHUB_USERNAME = "pkl2025"
+GITHUB_REPO = "pdf-streamlit-app"
+GITHUB_BRANCH = "main"  # biasanya 'main' atau 'master'
 
-selected_pdf = st.selectbox("Pilih PDF:", pdf_files)
+# Daftar file PDF yang ada di folder "pdfs" di GitHub
+pdf_files = [
+    "test1 - Copy (2).pdf",
+    "test1 - Copy (3).pdf",
+    "test1 - Copy (4).pdf",
+    "test1 - Copy (5).pdf",
+    "test1 - Copy.pdf",
+    "test1.pdf"
+]
 
-if selected_pdf:
-    file_path = os.path.join(pdf_dir, selected_pdf)
-    with open(file_path, "rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode("utf-8")
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+# Base URL untuk raw PDF dari GitHub
+base_url = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{GITHUB_REPO}/{GITHUB_BRANCH}/pdfs/"
+
+st.subheader("📚 Daftar PDF")
+for pdf_file in pdf_files:
+    full_url = base_url + pdf_file
+    file_name_display = pdf_file.replace("-", " ").replace(".pdf", "").title()
+    st.markdown(f'<a href="{full_url}" target="_blank">📄 {file_name_display}</a>', unsafe_allow_html=True)
