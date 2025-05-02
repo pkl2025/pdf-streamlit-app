@@ -22,7 +22,7 @@ pdf_files = [
 base_url = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{GITHUB_REPO}/{GITHUB_BRANCH}/pdfs/"
 
 # Tampilkan daftar PDF yang bisa dipilih
-st.subheader("📚 Pilih PDF untuk ditampilkan")
+st.subheader("📚 Pilih PDF")
 selected_pdf = st.selectbox("Pilih file PDF:", pdf_files)
 
 # Encode spasi dan buat URL
