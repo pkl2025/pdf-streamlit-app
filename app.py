@@ -27,7 +27,7 @@ st.subheader(f"📖 Menampilkan: {selected_title}")
 st.components.v1.html(
     f"""
     <div style="display: flex; justify-content: center;">
-        <iframe src="{embed_url}" width="80%" height="800px" style="border:none;"></iframe>
+        <iframe src="{embed_url}" width="100%" height="800px" style="border:none;"></iframe>
     </div>
     """,
     height=800,
