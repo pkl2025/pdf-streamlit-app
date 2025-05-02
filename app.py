@@ -4,7 +4,10 @@
 import streamlit as st
 
 st.set_page_config(page_title="PDF Viewer", layout="wide")
-st.title("📄 PDF Viewer")
+st.markdown(
+    "<h1 style='text-align: center;'>📄 PDF Viewer</h1>",
+    unsafe_allow_html=True
+)
 
 # Daftar file PDF dengan nama tampilannya dan ID Google Drive-nya
 pdf_files = {
