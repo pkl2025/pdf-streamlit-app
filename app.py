@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="PDF Viewer", layout="wide")
-st.title("📄 PDF Viewer - Open in New Tab")
+st.title("📄 PDF Viewer - Embedded View")
 
 # Username dan repo GitHub kamu
 GITHUB_USERNAME = "pkl2025"
@@ -21,13 +21,17 @@ pdf_files = [
 # URL dasar ke folder raw PDF di GitHub
 base_url = f"https://raw.githubusercontent.com/{GITHUB_USERNAME}/{GITHUB_REPO}/{GITHUB_BRANCH}/pdfs/"
 
-# Tampilkan daftar link ke PDF
-st.subheader("📚 Daftar PDF")
-for pdf_file in pdf_files:
-    full_url = base_url + pdf_file.replace(" ", "%20")  # encode spasi untuk URL valid
-    # Bersihkan nama file untuk ditampilkan
-    display_name = pdf_file.replace(".pdf", "").replace("-", " ").replace("Copy", "").replace("(", "").replace(")", "").strip().title()
-    st.markdown(
-        f'<a href="{full_url}" target="_blank" style="text-decoration: none; font-size: 18px;">📄 {display_name}</a>',
-        unsafe_allow_html=True
-    )
+# Tampilkan daftar PDF yang bisa dipilih
+st.subheader("📚 Pilih PDF untuk ditampilkan")
+selected_pdf = st.selectbox("Pilih file PDF:", pdf_files)
+
+# Encode spasi dan buat URL
+encoded_pdf = selected_pdf.replace(" ", "%20")
+full_url = base_url + encoded_pdf
+
+# Tampilkan PDF dengan iframe
+st.subheader("📖 Tampilan PDF")
+pdf_display = f"""
+<iframe src="{full_url}" width="100%" height="800px" style="border: none;"></iframe>
+"""
+st.markdown(pdf_display, unsafe_allow_html=True)
