@@ -1,6 +1,3 @@
-# https://drive.google.com/file/d/1YNxu_bLeftHjwAJGbczNZ6HGcRVqV8FQ/view?usp=sharing
-# https://drive.google.com/file/d/1cT0Ndwustu_g0eIlW0IPrIkGoeIWYO7M/view?usp=sharing
-
 import streamlit as st
 
 st.set_page_config(page_title="PDF Viewer", layout="wide")
@@ -9,18 +6,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Daftar file PDF dengan nama tampilannya dan ID Google Drive-nya
+# Daftar file PDF dan link OneDrive yang sudah dikonversi
 pdf_files = {
-    "AgendaPKL": "1YNxu_bLeftHjwAJGbczNZ6HGcRVqV8FQ",
-    "TestPCCR": "1cT0Ndwustu_g0eIlW0IPrIkGoeIWYO7M",
+    "AgendaPKL": "https://onedrive.live.com/embed?resid=7B3A549F2721615%21135&authkey=!AEczkJm7jWlRFi9",
+    "TestPCCR": "https://onedrive.live.com/embed?resid=7B3A549F2721615%21138&authkey=!Ad7lr_Ht_fBCp2r",
 }
 
 # Pilih file dari dropdown
 selected_title = st.selectbox("📚 Pilih PDF", list(pdf_files.keys()))
-selected_file_id = pdf_files[selected_title]
-
-# URL embed Google Drive
-embed_url = f"https://drive.google.com/file/d/{selected_file_id}/preview"
+embed_url = pdf_files[selected_title]
 
 # Tampilkan di iframe yang dipusatkan
 st.subheader(f"📖 Menampilkan: {selected_title}")
