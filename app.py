@@ -13,11 +13,11 @@ pdf_files = {
 }
 
 # Pilih file dari dropdown
-selected_title = st.selectbox("📚 Pilih PDF", list(pdf_files.keys()))
+selected_title = st.selectbox("📚📚📚 Pilih PDF", list(pdf_files.keys()))
 embed_url = pdf_files[selected_title]
 
 # Tampilkan di iframe yang dipusatkan
-st.subheader(f"📖 Menampilkan: {selected_title}")
+st.subheader(f"📖📖📖 Menampilkan: {selected_title}")
 st.components.v1.html(
     f"""
     <div style="display: flex; justify-content: center;">
