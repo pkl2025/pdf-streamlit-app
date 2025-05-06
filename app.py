@@ -1,19 +1,25 @@
 import streamlit as st
 
-st.set_page_config(page_title="PDF Viewer", layout="wide")
+st.set_page_config(page_title="File Viewer", layout="wide")
 st.markdown(
-    "<h1 style='text-align: center;'>📄 PDF Viewer</h1>",
+    "<h1 style='text-align: center;'>📄 DMIA #2</h1>",
     unsafe_allow_html=True
 )
 
 # Daftar file PDF dan OneDrive embed link
 pdf_files = {
-    "AgendaPKL": "https://1drv.ms/b/c/07b3a549f2721615/IQTM5CZu41pURYvdbTJOytqpAY8dRawqX-2K3h6pACVIM7Q",
-    "TestPCCR": "https://1drv.ms/b/c/07b3a549f2721615/IQTe5a_x7f3wQqdq559RZtR7AbGFFJuh6eLGHWVXt14GMsA",
+    "PCDT": "https://1drv.ms/b/c/07b3a549f2721615/IQTM5CZu41pURYvdbTJOytqpAY8dRawqX-2K3h6pACVIM7Q",
+    "PCCR": "https://1drv.ms/b/c/07b3a549f2721615/IQTe5a_x7f3wQqdq559RZtR7AbGFFJuh6eLGHWVXt14GMsA",
+    "Safety Check": "",
+    "QA NET": "",
+    "FMEA": "",
+    "ISIR": "",
+    "Work Instruction": "",
+    "Manual Book Machine": "",
 }
 
 # Pilih file dari dropdown
-selected_title = st.selectbox("📚 Pilih PDF", list(pdf_files.keys()))
+selected_title = st.selectbox("📚 Pilih file", list(pdf_files.keys()))
 embed_url = pdf_files[selected_title]
 
 # Tampilkan di iframe dengan ukuran penuh dan terpusat
