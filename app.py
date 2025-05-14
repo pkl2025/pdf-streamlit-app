@@ -8,14 +8,7 @@ st.markdown(
 
 # Daftar file PDF dan OneDrive embed link
 pdf_files = {
-    "PCDT": "https://1drv.ms/b/c/07b3a549f2721615/IQTM5CZu41pURYvdbTJOytqpAY8dRawqX-2K3h6pACVIM7Q",
-    "PCCR": "https://1drv.ms/b/c/07b3a549f2721615/IQTe5a_x7f3wQqdq559RZtR7AbGFFJuh6eLGHWVXt14GMsA",
-    "Safety Check": "",
-    "QA NET": "",
-    "FMEA": "",
-    "ISIR": "",
-    "Work Instruction": "",
-    "Manual Book Machine": "",
+    "Manual Book": "https://1drv.ms/b/c/07b3a549f2721615/IQRXg1J09mayT5PBNRPcxHdSAZoWwzcAionujvu6iI48e_k",
 }
 
 # Pilih file dari dropdown
